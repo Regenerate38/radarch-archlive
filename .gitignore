@@ -1,0 +1,10 @@
+*.tar
+*.tar.*
+work/
+out/
+*.iso
+*.img
+*.cer
+*.crt
+*.pem
+*.key
