@@ -26,29 +26,43 @@ sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
 # Enable necessary services and set default target
 systemctl enable pacman-init.service choose-mirror.service
-systemctl set-default multi-user.target
+
+# Set default target to graphical
+systemctl set-default graphical.target
+
+# Enable SDDM service
 systemctl enable sddm.service
 
-# Add user and configure sudo access without manual editing
+# Addding user and configuring sudo access
 useradd -m -G wheel user
-echo "user ALL=(ALL) ALL" >> /etc/sudoers.d/user
-
-# Ensure the new sudoers file has correct permissions
+echo "user ALL=(ALL) ALL" > /etc/sudoers.d/user
 chmod 440 /etc/sudoers.d/user
+passwd
 
-# Set password for new user (this will prompt for input)
-passwd user
+# Copying themes to .local/share/themes in user's home directory
+source_folder="/theme-to-copy/"
+destination_folder="/home/user/.local/share/"
+mkdir -p "$destination_folder"
+cp -r "$source_folder." "$destination_folder"
 
-echo "Before the keys thingy"
+# Set ownership of the copied files to the user
+chown -R user:user "/home/user/.local"
+
+
 # Initialize pacman keyring and update packages
-sudo bash -c "pacman -Sy --noconfirm && pacman-key --init && pacman-key --populate archlinux"
+pacman-key --init && pacman-key --populate archlinux
+pacman -Sy --noconfirm
 
-echo "Enabiling sddm as default display manager"
-# Setting SDDM as the default display manager
-sudo systemctl enable sddm.service
+echo "Enabling SDDM as default display manager"
+systemctl enable sddm.service
 
 echo "Creating xinitrc file"
 # Create a .xinitrc file for the user to start Plasma Wayland
-sudo echo "exec startplasma-wayland" > /home/user/.xinitrc
-echo "Chown"
-sudo chown user:user /home/user/.xinitrc
+echo "exec startplasma-wayland" > /home/user/.xinitrc
+chown user:user /home/user/.xinitrc
+
+echo "Applying KDE Plasma settings"
+sudo -u user lookandfeeltool -a Ant-Dark || echo "Failed to apply look-and-feel theme."
+sudo -u user /lib/plasma-apply-colorscheme Ant-Dark || echo "Failed to apply color scheme."
+
+echo "Script execution completed successfully!"

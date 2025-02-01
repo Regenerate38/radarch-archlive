@@ -8,3 +8,4 @@ out/
 *.crt
 *.pem
 *.key
+/airootfs/theme-to-copy
