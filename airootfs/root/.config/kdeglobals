@@ -1,0 +1,13 @@
+[General]
+BrowserApplication=firefox.desktop
+ColorScheme=Ant-Dark
+Name=Ant-Dark
+
+[Icons]
+Theme=Ant-Dark
+
+[KDE]
+AnimationDurationFactor=2
+ColorScheme=Ant-Dark
+LookAndFeelPackage=Ant-Dark
+
