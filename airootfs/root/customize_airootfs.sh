@@ -44,10 +44,10 @@ systemctl enable sddm.service
 # echo "user:password" | chpasswd
 #
 # # Copying themes to .local/share/themes in user's home directory
-source_folder="/theme-to-copy/"
-destination_folder="~/"
-
-cp -r "$source_folder." "$destination_folder"
+# source_folder="/theme-to-copy/"
+# destination_folder="~/"
+#
+# cp -r "$source_folder." "$destination_folder"
 #
 # # Set ownership of the copied files to the user
 # chown -R user:user "/home/user/.local"
