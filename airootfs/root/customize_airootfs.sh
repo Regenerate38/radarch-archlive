@@ -63,5 +63,8 @@ echo "Creating xinitrc file"
 # Create a .xinitrc file for the user to start Plasma Wayland
 echo "exec startplasma-wayland" > /home/user/.xinitrc
 
+sudo chmod +x /usr/local/bin/GUI_Installer
+update-desktop-database /usr/share/applications/
+
 
 echo "Script execution completed successfully!"

@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 ##Hello world
 [Desktop Entry]
 Name=Arch GUI Installer
