@@ -44,6 +44,7 @@ flatpak-kcm
 foot-terminfo
 fsarchiver
 gpart
+git
 gpm
 gptfdisk
 grml-zsh-config
@@ -57,18 +58,13 @@ iwd
 jfsutils
 kactivitymanagerd
 kate
-kde-accessibility-meta
 kde-cli-tools
 kdecoration
-kde-graphics-meta
 kde-gtk-config
-kde-multimedia-meta
 kde-network-meta
 kdeplasma-addons
 kde-sdk-meta
 kde-system-meta
-kde-utilities-meta
-kdevelop-meta
 kgamma
 kglobalacceld
 kinfocenter
