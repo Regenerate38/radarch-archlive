@@ -2,7 +2,7 @@
 ##Hello world
 [Desktop Entry]
 Name=Arch GUI Installer
-Exec=/usr/local/bin/GUI_Installer
+Exec=konsole -e "sudo /usr/local/bin/GUI_Installer"
 Type=Application
 Categories=System;
 Terminal=false

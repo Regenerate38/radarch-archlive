@@ -46,8 +46,10 @@ echo "user:password" | chpasswd
 # Copying themes and configs to user's home directory
 source_folder="/theme-to-copy/"
 destination_folder="/home/user/"
+destination_folder2="/root/"
 
 cp -r "$source_folder." "$destination_folder"
+cp -r "$source_folder." "$destination_folder2"
 
 # Set ownership of the copied files to the user
 chown -R user:user "/home/user/.local"
@@ -63,7 +65,7 @@ echo "Creating xinitrc file"
 # Create a .xinitrc file for the user to start Plasma Wayland
 echo "exec startplasma-wayland" > /home/user/.xinitrc
 
-sudo chmod +x /usr/local/bin/GUI_Installer
+sudo chmod o+x /usr/local/bin/GUI_Installer
 update-desktop-database /usr/share/applications/
 
 
