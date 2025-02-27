@@ -45,6 +45,10 @@ For more details on how this works, refer to [archiso wiki page](https://wiki.ar
 
 ![RadArch Custom GUI Installer](/screenshots/radarch-custom-installer.png)
 
+![RadArch GUI Installer: Create User](/screenshots/radarch-installer-create-user.png)
+
+![RadArch GUI Installer Installing](/screenshots/radarch-custom-installer-installing.png)
+
 ![Radarch Install Script](/screenshots/radarch-custom-installscript.png)
 
 ## Tools and configs used
